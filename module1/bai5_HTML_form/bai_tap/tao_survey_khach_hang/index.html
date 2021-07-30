@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header{
+            padding: 10px 20px;
+            border-bottom: 1px dashed #ccc;
+
+        }
+
+        form{
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form_item{
+            padding: 10px 0px;
+            font-weight: 300;
+        }
+
+        .form_item select{
+            width: 600px;
+        }
+
+        .max_length{
+            display: none;
+        }
+
+
+        .form_item.active{
+            background-color: burlywood;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+
+        th,td{
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+
+        th{
+            background-color: rgb(196, 189, 189);
+        }
+
+        button{
+            width: 80px;
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="header">
+    <h2>Market Research Survey</h2>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+</div>
+
+<form action="">
+    <div class="form_item active">
+        <b>What is your age range?</b>
+        <br>
+        <select name="range" id="">
+            <option value="" name="range_item">18-24</option>
+            <option value="" name="range_item">25-34</option>
+            <option value="" name="range_item">35-50</option>
+            <option value="" name="range_item">50+</option>
+        </select>
+    </div>
+
+
+    <div class="form_item">
+        <b>What is your yearly income range?</b>
+        <br>
+        <select name="income" id="">
+            <option value="" name="income_item">$0 - $25,000</option>
+            <option value="" name="income_item">$25,001 - $50,000</option>
+            <option value="" name="income_item">$50,001 - $100,000</option>
+            <option value="" name="income_item">$100,000+</option>
+        </select>
+    </div>
+
+    <div class="form_item">
+        <b>Gender Identity</b>
+        <br>
+        <input type="radio" name="sex" id=""male>
+        <label for="male"> Male</label>  <br>
+        <input type="radio" name="sex" id="female">
+        <label for="female"></label> Female <br>
+        <input type="radio" name="sex" id="nonbinary">
+        <label for="nonbinary"></label> Nonbinary <br>
+        <input type="radio" name="sex" class="other" id="Other">
+        <label for="Other"></label> Other <br>
+
+        <input type="text" maxlength="250" class="other_text"><br>
+        <div class="max_length">
+            <span>Maximum of <b>250</b> characters.</span>
+            <span style="margin-left: 10px;"> <i>Currently Used: <b class="length_word">0</b> characters.</i>
+                </span>
+        </div>
+    </div>
+
+    <div class="form_item">
+        <b>Which of the following products have your purchased in the last 2 months. Please check all that
+            apply.</b>
+        <br>
+        <input type="checkbox" name="product" id="product_1">
+        <label for=""> Product 1 </label><br>
+        <input type="checkbox" name="product" id="product_2">
+        <label for="product_2"></label> Product 2 <br>
+        <input type="checkbox" name="product" id="product_3">
+        <label for="product_3"></label> Product 3 <br>
+
+    </div>
+
+    <div class="form_item">
+        <b>How often would you use our new product?</b>
+        <br>
+        <input type="radio" name="date" id="daily">
+        <label for="daily"></label> Daily <br>
+        <input type="radio" name="date" id="weekly">
+        <label for="weekly"></label> Weekly <br>
+        <input type="radio" name="date" id="monthly">
+        <label for="monthly"></label> Monthly <br>
+    </div>
+
+    <div class="form_item ">
+        <b>What would you pay for the new product?</b>
+        <br>$
+        <input type="text" name="money"> .
+        <input type="text" maxlength="2" name="money">
+
+    </div>
+
+    <div class="form_item">
+        <b>What features would you like to see in the new product?</b>
+        <br>
+        <textarea name="features" id="" cols="100" rows="10"></textarea>
+
+    </div>
+
+    <div class="form_item">
+        <b>Please rate your level of agreement with the following statements.</b>
+        <br>
+        <table>
+            <tr>
+                <th></th>
+                <th>Strongly Disagree</th>
+                <th>Disagree</th>
+                <th>Agree</th>
+                <th>Strongly agree</th>
+            </tr>
+            <tr>
+                <td>Our products are priced fairly</td>
+                <td><input type="radio" name="priced_fairly"> 1</td>
+                <td><input type="radio" name="priced_fairly"> 2</td>
+                <td><input type="radio" name="priced_fairly"> 3</td>
+                <td><input type="radio" name="priced_fairly"> 4</td>
+
+            </tr>
+            <tr>
+                <td>Our products are high quality</td>
+                <td><input type="radio" name="quality"> 1</td>
+                <td><input type="radio" name="quality"> 2</td>
+                <td><input type="radio" name="quality"> 3</td>
+                <td><input type="radio" name="quality"> 4</td>
+
+            </tr>
+
+            <tr>
+                <td>You would recommened our product to a friend or coworker</td>
+                <td><input type="radio" name="recommened"> 1</td>
+                <td><input type="radio" name="recommened"> 2</td>
+                <td><input type="radio" name="recommened"> 3</td>
+                <td><input type="radio" name="recommened"> 4</td>
+
+            </tr>
+
+        </table>
+    </div>
+
+    <button type="submit">Submit</button>
+
+
+
+
+
+
+</form>
+
+<script src="main.js"></script>
+
+</body>
+
+
+
+</html>
