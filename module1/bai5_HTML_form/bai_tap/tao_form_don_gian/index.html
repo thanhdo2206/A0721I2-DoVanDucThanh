@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .col_half-left{
+            width: 20%;
+        }
+
+        .col_half-right{
+            width: 70%;
+        }
+
+        .form_container{
+            width: 50vw;
+            margin: auto;
+            border: solid 1px #000;
+            margin-bottom: 100px;
+        }
+
+        h1{
+            color: #fff;
+            background-color: orange;
+            text-align: center;
+
+        }
+
+        form{
+            padding: 10px 20px;
+        }
+
+        .text_label{
+            color: blue;
+            padding-right: 20px;
+        }
+
+        .hobby_item-checkbox{
+            width: 33.33333%;
+            color: rgb(243, 50, 50);
+            text-align:left;
+        }
+
+        button{
+            padding:8px 16px;
+        }
+
+        .register_item{
+            display: block;
+
+
+        }
+
+        .register_item > p{
+            width: 100px;
+            display: inline-block;
+            margin-right: 50px;
+            color:blue
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="form_container" >
+    <h1>SỞ THÍCH CỦA BẠN</h1>
+    <form action="#" method="POST">
+
+        <div class="row" style="text-align: right;">
+            <p class="col_half-left text_label">Họ và tên</p>
+            <input type="text" class="col_half-right" name="yourname">
+        </div><br>
+
+        <div class="row" style="text-align: right;">
+            <p class="col_half-left text_label">Email</p>
+            <input type="email" class="col_half-right" name="email">
+        </div><br>
+
+        <div class="row" style="text-align: right;">
+            <p class="col_half-left text_label">Sở thích</p>
+            <div class="col_half-right hobby_container row">
+                <label class="hobby_item-checkbox">
+                    <input type="checkbox" name="hobby">
+                    Thể thao
+                </label>
+
+                <label class="hobby_item-checkbox">
+                    <input type="checkbox" name="hobby">
+                    Âm nhạc
+                </label>
+
+                <label class="hobby_item-checkbox">
+                    <input type="checkbox" name="hobby">
+                    Đọc sách
+                </label>
+
+                <label class="hobby_item-checkbox">
+                    <input type="checkbox" name="hobby">
+                    Lướt web
+                </label>
+
+                <label class="hobby_item-checkbox">
+                    <input type="checkbox" name="hobby">
+                    Chơi game
+                </label>
+
+                <label class="hobby_item-checkbox">
+                    <input type="checkbox" name="hobby">
+                    Điện ảnh
+                </label>
+
+                <label class="hobby_item-checkbox">
+                    <input type="checkbox" name="hobby">
+                    Du lịch
+                </label>
+
+            </div>
+        </div><br>
+
+
+        <button type=" submit" name="Submit Form" style="margin-left: 122px;">Gửi thông tin</button>
+        <button type="reset" name="Reset Form">Nhập lại</button>
+
+
+    </form>
+</div>
+
+<div class="form_container">
+    <h1>ĐĂNG KÝ HỌC VIÊN</h1>
+    <form action="#" method="POST" style="background-color:khaki">
+        <label class="register_item">
+            <p>Họ và tên</p>
+            <input type="text" name="name_student">
+        </label><br>
+
+        <label class="register_item">
+            <p>Ngày sinh</p>
+            <input type="text" name="date">
+        </label><br>
+
+        <label class="register_item">
+            <p>Giới tính</p>
+            <input type="radio" name="sex">Nữ
+            <input type="radio" name="sex">Nam
+        </label><br>
+
+        <label class="register_item">
+            <p>Địa chỉ</p>
+            <textarea name="adress" id="" cols="30" rows="6"></textarea>
+        </label><br>
+
+        <label class="register_item">
+            <p>Lớp</p>
+            <select name="choose_class" id="">
+                <option value="">-Chọn lớp-</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </label><br>
+
+        <label class="register_item">
+            <p>Email</p>
+            <input type="email" name="email">
+        </label><br>
+
+        <label class="register_item">
+            <p>Điện thoại</p>
+            <input type="number" name="phone">
+        </label><br>
+
+        <button type=" submit" name="Submit Form" style="margin-left: 152px;">Đăng ký</button>
+        <button type="reset" name="Reset Form">Nhập lại</button>
+
+    </form>
+</div>
+
+</body>
+
+</html>
