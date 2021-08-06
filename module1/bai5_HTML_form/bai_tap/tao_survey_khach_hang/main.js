@@ -5,6 +5,7 @@ var $$ = document.querySelectorAll.bind(document);
 var other = $('.other');
 var maxLength = $('.max_length');
 var sex = $$('input[name= "sex"]');
+
 sex.forEach((item, index) => {
     item.addEventListener('click', (event) => {
         if (item.classList.contains('other')) {
@@ -27,7 +28,7 @@ otherText.addEventListener('keyup', (event) => {
 
 })
 
-var otherText = $('.other_text');
+
 otherText.addEventListener('click', () => {
     maxLength.style.display = 'block';
     other.checked = 'true';

@@ -6,27 +6,28 @@
 </head>
 <body>
 <form action="http://demo.codegym.vn/6/registration_form/register.php" method="get">
-    <label for="">
-         Họ và tên: <br>
-            <input type="text" name="your_name">
-        </label><br>
-    <label for="">
-        Email: <br>
-        <input type="email" name="email">
-    </label> <br>
+    <label for="name">Họ và tên: </label>
+    <br>
+    <input type="text" name="your_name" id="name">
+    <br>
 
-    <label for="">
-        Số điện thoại: <br>
-        <input type="text" name="phone">
-    </label> <br>
+    <label for="Email"> Email: </label>
+    <br>
+    <input type="email" name="email" id="Email">
+    <br>
 
-    <label for="">
-        Giới tính: <br>
-        <input type="radio" name="sex">Nam
-        <input type="radio" name="sex">Nữ
-    </label><br>
+    <label for="phone">Số điện thoại: </label>
+        <br>
+        <input type="text" name="phone" id="phone">
+     <br>
 
-    <button type="submit">Đăng ký</button>
+    <label for="sex">Giới tính: </label>
+        <br>
+        <input type="radio" name="sex" id="sex">Nam
+        <input type="radio" name="sex" id="sex">Nữ
+    <br>
+
+    <button type="submit" name="Submit" value="submit">Đăng ký</button>
 </form>
 </body>
 </html>

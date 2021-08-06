@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        select{
+            width: 100px;
+            padding: 4px 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="convert__money">
+
+
+<form action="#">
+
+    <div>
+        <label for="money">Amount</label><br>
+        <input type="text" id="money">
+    </div>
+
+    <div>
+        <label for="">From Currency</label><br>
+        <select name="" id="money_from" >
+            <option value="VietNam">VietNam</option>
+            <option value="USD">USD</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="">To Currency</label><br>
+        <select name="" id="money_to">
+            <option value="">USD</option>
+            <option value="">VietNam</option>
+        </select>
+    </div>
+
+    <button class="btn">Convert</button>
+
+</form>
+    <h1>Covevrt : <i class="money_converted"></i></h1>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
