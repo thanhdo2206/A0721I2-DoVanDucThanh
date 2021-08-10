@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #calculator{
+            border: 3px #ccc solid;
+            display: inline-block;
+            padding: 10px;
+            width: 200px;
+        }
+        #number{
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px 10px;
+        }
+        .buttons{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .btn-item{
+            border: 1px #ccc solid;
+            padding: 10px;
+            display: inline-block;
+            width: 25%;
+            color: blue;
+
+        }
+    </style>
+</head>
+
+<body>
+<div id="calculator">
+    <input type="text" id="number" disabled   >
+    <div class="buttons">
+        <p class="btn-item">1</p>
+        <p class="btn-item">2</p>
+        <p class="btn-item">3</p>
+        <p class="btn-item">+</p>
+        <p class="btn-item">4</p>
+        <p class="btn-item">5</p>
+        <p class="btn-item">6</p>
+        <p class="btn-item">-</p>
+        <p class="btn-item">7</p>
+        <p class="btn-item">8</p>
+        <p class="btn-item">9</p>
+        <p class="btn-item">x</p>
+        <p class="btn-item">C</p>
+        <p class="btn-item">0</p>
+        <p class="btn-item">=</p>
+        <p class="btn-item">/</p>
+
+
+    </div>
+</div>
+
+<script>
+
+    let display = document.getElementById('number');
+    let btnItem = document.querySelectorAll('.btn-item');
+
+    btnItem.forEach((item)=>{
+        item.addEventListener('click', event=>{
+            if(item.innerText == "=")
+                display.value = eval(display.value);
+            else if(item.innerText == "C")
+                display.value=' ';
+            else {
+                if(item.innerText == "x") display.value += '*';
+                else display.value += item.innerText;
+            }
+
+        })
+
+    })
+
+
+
+</script>
+</body>
+
+</html>

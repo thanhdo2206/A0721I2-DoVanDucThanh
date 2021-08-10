@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<form action="">
+    <input type="text" id="month">
+    <button type="button" id="btn">Tính số ngày</button>
+    <h1 id="result"></h1>
+</form>
+<script>
+    let month = document.getElementById('month');
+    let btn = document.getElementById('btn');
+    let result = document.getElementById('result');
+    btn.addEventListener('click', event => {
+        let value = parseInt(month.value);
+        switch (value) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                result.innerText = "Tháng " + value + " có 31 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                result.innerText = "Tháng " + value + " có 30 ngày";
+                break;
+            case 2:
+                result.innerText = "Tháng " + value + " có 28 hoặc 29 ngày";
+                break;
+            default :  result.innerText = "Không có tháng " + value ;
+
+
+        }
+    })
+
+
+
+</script>
+</body>
+
+</html>
