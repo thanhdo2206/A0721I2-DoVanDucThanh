@@ -29,9 +29,9 @@ imgs.forEach((imgPart, index) => {
             // so sánh class để in ra kết quả
             let count = 0;
             for (let i = 1 ; i < actives.length ; i++){
-                let a = actives[i].classList;
-                let b = a[1];
-                if(check == b ) count++;
+                let classIs = actives[i].classList; // mảng chứa những class
+                let classAnimal = classIs[1];
+                if(check == classAnimal ) count++;
             }
             // console.log(count);
             result(count);
