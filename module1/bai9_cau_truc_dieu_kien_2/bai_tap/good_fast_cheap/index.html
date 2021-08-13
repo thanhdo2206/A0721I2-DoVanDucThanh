@@ -1,0 +1,93 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Checkbox Design</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .check {
+
+            margin: 20px 50px;
+            position: relative;
+
+        }
+
+        .check::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            background-color: #ddd;
+            display: inline-block;
+            top: -2px;
+            left: -12px;
+            border-radius: 25px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        }
+
+        .check::after {
+            content: '';
+            width: 25px;
+            height: 25px;
+            background-color: #eee;
+            position: absolute;
+            top: -2px;
+            left: -10px;
+            /* transition: 200ms; */
+            border-radius: 25px;
+        }
+
+        .check:checked::after {
+            left: 10px;
+        }
+
+        .check:checked::before {
+            background-color: #8BC34A;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <input type="checkbox" class="check" id="good" onclick="change(good)">
+    <label for="good">Good</label><br>
+    <input type="checkbox" class="check" id="fast" onclick="change(fast)">
+    <label for="fast">Fast</label><br>
+    <input type="checkbox" class="check" id="cheap" onclick="change(cheap)">
+    <label for="cheap">Cheap</label>
+
+</div>
+
+<script>
+    var good = document.getElementById('good'),
+        fast = document.getElementById('fast'),
+        cheap = document.getElementById('cheap');
+    function change(element) {
+        let isGood = good.checked;
+        let isFast = fast.checked;
+        let isCheap = cheap.checked;
+
+        switch (element.id) {
+            case "good":
+                if (isFast && isCheap)  fast.checked = false;
+                break;
+            case "fast":
+                if (isGood && isCheap) cheap.checked = false;
+                break;
+            case "cheap":
+                if (isGood && isFast)  good.checked  = false;
+                break;
+        }
+    }
+
+
+
+
+</script>
+</body>
+
+</html>
