@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bai 12  Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu,
+    // số tháng cho vay và lãi xuất hàng tháng. lãi suất 3%/tháng
+
+    alert("tính số tiền bạn nhận được khi gửi ngân hàng, với lãi 3%/tháng");
+    let moneyStart = parseInt(prompt("nhập số tiền muốn gửi :"));
+    let month = parseInt(prompt("nhập số tháng muốn rút tiền :"));
+
+    let sumMoney = moneyStart;
+    for( let i = 0; i < month; i++)
+    {
+        sumMoney += sumMoney * 3 / 100;
+    }
+    alert(`số tiền nhận được là : ${sumMoney}`);
+
+
+</script>
+</body>
+</html>

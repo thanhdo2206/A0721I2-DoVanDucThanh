@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bai 10 tính tiền điên
+    //chương trình tính tiền điện với chỉ số mới và chỉ số cũ Được nhập vào từ bàn phím.
+    // In ra màn hình chỉ số cũ, chỉ số mới và số tiền phải trả.
+    // Biết rằng 100 kWh đầu giá 1000,
+    // từ  101 – 150kwh giá 1200,
+    // từ 151 – 200kwh giá 2000,
+    // từ 201kwh trở lên giá 2500.
+
+
+    alert("tính tiền điện tiêu thụ trong một tháng")
+    let oldPoint = parseInt(prompt("nhập chỉ số cũ :(kWh)"));
+    let newPoint = parseInt(prompt("nhập chỉ số mới:(kWh)"));
+    //lượng tiêu thụ
+    let electric = newPoint-oldPoint  ;
+    if(electric<=100) money=electric*1000;
+    else  if(electric<=150) money=100*1000 + (electric-100)*1200;
+    else if (electric<=200) money=100*1000 + 50*1200 + (electric-150)*2000;
+    else money=100*1000 + 50*1200 + 50*2000 + (electric-200)*2500;
+
+    alert(`tiền điện cần nộp là  : ${money}`);
+
+</script>
+</body>
+</html>

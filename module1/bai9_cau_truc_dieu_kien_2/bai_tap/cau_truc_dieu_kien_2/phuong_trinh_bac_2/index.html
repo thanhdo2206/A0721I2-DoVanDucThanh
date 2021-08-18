@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bai 7 phương trình bậc 2 a*x^2 + b*x + c =0
+    alert("giải phương trình bậc 2: a*x^2 + b*x + c =0")
+    let a = parseFloat(prompt("nhập a:"));
+    let b = parseFloat(prompt("nhập b:"));
+    let c = parseFloat(prompt("nhập c:"));
+
+    let delta = b*b - 4*a*c;
+    let sqrtDelta = Math.sqrt(delta);
+    console.log(delta);
+    if(delta > 0 ){
+        let x1 = (-b + sqrtDelta) / (2*a);
+        let x2 = (-b - sqrtDelta) / (2*a);
+        alert(`phương trình có hai nghiệm x1=${x1} và x2=${x2}`);
+    }else if(delta  < 0) alert("phương trình vô nghiệm");
+    else alert(`phương trình có nghiệm kép x1=x2=${-b/2*a}`);
+
+</script>
+</body>
+</html>

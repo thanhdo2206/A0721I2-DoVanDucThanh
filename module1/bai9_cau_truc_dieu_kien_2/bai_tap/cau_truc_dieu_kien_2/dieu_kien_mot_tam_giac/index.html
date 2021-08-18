@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bai 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.
+
+    alert("kiểm ba số thực có phải là cạnh của tam giác không?");
+    let a = parseFloat(prompt("nhập a:"));
+    let b = parseFloat(prompt("nhập b:"));
+    let c = parseFloat(prompt("nhập c:"));
+
+    if ( a > 0 && b>0 && c>0){
+        if(a<b+c && b<a+c && c<a+b) alert("đây là ba cạnh của một tam giác");
+    }else alert("không phải ba cạnh của một tam giác");
+</script>
+</body>
+</html>
