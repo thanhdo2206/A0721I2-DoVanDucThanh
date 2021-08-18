@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = parseInt(prompt("nhập chiều dài x"));
+    let y = parseInt(prompt("nhập chiều rộng y"));
+
+
+    for (let i=1; i <= y; i++) {
+        for (let j=1; j <= x; j++) {
+            if(i==1 || i == y)  document.writeln("*");
+            else  if (j==1 || j == x) document.writeln("*");
+            else document.writeln("&nbsp;&nbsp");
+
+        }
+        document.write("<br>");
+
+    }
+</script>
+</body>
+</html>
