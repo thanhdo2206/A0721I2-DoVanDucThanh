@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // bài 2: Tăng, giảm nhiệt độ
+    let temperature = prompt("Nhập nhiệt độ hiện tại");
+    while (temperature < 20 || temperature > 100) {
+        temperature = prompt("Nhập nhiệt độ hiện tại");
+        if (temperature > 100) alert("giảm nhiệt độ xuống");
+        if (temperature < 20) alert("tăng nhiệt độ");
+    }
+    alert(`Nhiệt độ hiện tại là: ${temperature}`);
+</script>
+</body>
+</html>

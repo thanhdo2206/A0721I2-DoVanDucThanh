@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bài 3: in ra 20 số trong dãy fibonacci
+
+    let a= 1;
+    let b=1;
+    let result="";
+    result += a + "," + b + "," ;
+    // a với b là hai số đầu trong dãy nên chỉ cần 18 số nữa
+    for(let i= 1;i<19;i++){
+        let c= a+b;
+        a=b;
+        b=c;
+        result+= c+ ",";
+    }
+    document.write(result) ;
+</script>
+</body>
+</html>

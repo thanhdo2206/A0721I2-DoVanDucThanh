@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">Play</button>
+<script>
+    //bai 8
+
+    // 1. Thiết kế giao diện: Giao diện chỉ gồm 1 Button "Chơi"
+    // 2. Mô tả ứng dụng: Khi người dùng nhấn vào button “Chơi”:
+    // Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
+    // Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn
+    // Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán
+    // Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.
+    // Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi
+    // Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua
+    // và cho phép người dùng lựa chọn lại.
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click', () => {
+        alert("bạn muốn đoán trong khoảng nào (từ min đến max) ?");
+        let min = parseInt(prompt("min:"));
+        let max = parseInt(prompt("max:"));
+        //random trong khoản a và b
+        let point = Math.floor(Math.random() * (max - min) + min);
+        // console.log(point);
+        let count = 0;
+        while (true) {
+
+            let pointInput = parseInt(prompt("nhập giá trị mà bạn muốn đoán "));
+            if (pointInput >= min && pointInput <= max) {
+                if (point < pointInput) alert("giá trị bạn lớn hơn rồi, vui lòng thử lại");
+                else if (point > pointInput) alert("giá trị bạn bé hơn rồi, vui lòng thử lại");
+                else {
+                    alert("chúc mừng bạn, bạn đoán đúng rồi");
+                    break;
+                }
+                count++;
+            }else{
+                alert("giá trị nằm ngoài khoảng bạn đã chọn");
+            }
+
+            console.log(count);
+            if(count == 3) break;
+        }
+    })
+</script>
+</body>
+</html>
