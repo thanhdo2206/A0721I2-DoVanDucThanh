@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<button id="btn">Translate</button>
+<p id="result"></p>
+<script>
+    let English = ["attribute", "attitude", "telescope", "microscope"];
+    let Vietnam = ["thuộc tính", "thái độ", "kính thiên văn", "kính hiển vi"];
+
+    let input = document.getElementById("input");
+    let btn = document.getElementById("btn");
+    let result = document.getElementById("result");
+
+
+    btn.addEventListener('click', () => {
+        let word = input.value;
+
+        for (let i = 0; i < English.length; i++) {
+            if (word === English[i]) {
+                result.innerHTML = Vietnam[i];
+                break;
+            }
+
+            else { result.innerText = "No Data"};
+
+        }
+    })
+
+
+
+
+
+</script>
+</body>
+</html>
