@@ -12,7 +12,7 @@
 <script>
     let caro = document.getElementById("carogame");
     let a = [];
-    let data = "";
+
 
     //giao diện lúc đầu
     for (let i = 0; i < 5; i++) {
@@ -22,17 +22,8 @@
         }
     }
 
-    for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < 5; j++) {
-            data += a[i][j] + "&nbsp;&nbsp;";
-        }
-        data += "<br>";
-    }
-
-    //---------------------
-    function changeValue(a) {
-        data = "";
-
+    function display(a) {
+        let data = "";
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 5; j++) {
                 data += a[i][j] + "&nbsp;&nbsp;";
@@ -41,8 +32,9 @@
         }
         caro.innerHTML = data;
     }
+    display(a);
+    //---------------------
 
-    caro.innerHTML = data;
     let count = 0;
 
     function player() {
@@ -50,15 +42,17 @@
         let x = prompt("X(0-4): ");
         let y = prompt("Y(0-4): ");
 
-        while (a[x][y] == 'x' || a[x][y] == 'o') {
+        //khi đánh vào vị trí đc đánh, ta nhập lại vị trí
+        while (a[x][y] !== ".") {
+            alert("vị trí này đã được đánh");
             x = prompt("X(0-4): ");
             y = prompt("Y(0-4): ");
         }
 
-        if (count % 2 == 0) a[x][y] = "x";
+        if (count % 2 === 0) a[x][y] = "x";
         else a[x][y] = "o";
 
-        changeValue(a);
+        display(a);
         count++;
 
         // console.log(a);
@@ -74,9 +68,10 @@
             for (let j = 0; j + 2 < a.length; j++) {
                 if (a[i][j] !== ".") {
                     //hàng ngang, đường thẳng và đường chéo
-                    if ((a[i][j] === a[i][j + 1] && a[i][j] === a[i][j + 2]) ||
+                    if ( (a[i][j] === a[i][j + 1] && a[i][j] === a[i][j + 2]) ||
                         (a[i][j] === a[i + 1][j] && a[i][j] === a[i + 2][j])  ||
-                        (a[i][j] == a[i+1][j+1] && a[i][j] === a[i+2][j+2]))
+                        (a[i][j] === a[i+1][j+1] && a[i][j] === a[i+2][j+2])   ||
+                        (a[i][j] === a[i+1][j-1] && a[i][j] === a[i+2][j-2]) )
                     {
                         notify.innerText = `bạn "${a[i][j]}" đã win`;
                         break;

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //khai báo mảng a có 10 phần tử
+    let a = Array(10);
+
+    for (let i = 0; i< a.length;i++){
+        a[i] = prompt(`nhập giá trị cho phần tử a[${i}]`);
+    }
+
+
+    //tính tổng các số nguyên lớn hơn hoặc bằng 10
+    let total = 0 ;
+    let result="";
+    for(let i=0;i< a.length;i++){
+        if(a[i] >= 10){
+            total += parseInt(a[i]);
+            result += a[i] + "," ;
+        }
+    }
+
+    document.write("các số lớn hơn hoặc bằng 10 là : " + result + "<br>");
+    document.write("tổng của các số đó là : " + total);
+
+</script>
+</body>
+</html>

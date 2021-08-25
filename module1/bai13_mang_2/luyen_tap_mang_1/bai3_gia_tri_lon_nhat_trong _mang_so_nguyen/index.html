@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let n = parseInt(prompt("nhập số phần tử"));
+    for(let i=0; i< n; i++){
+        a[i] = parseInt(prompt(`nhập giá trị phần tử a[${i}]`));
+    }
+
+    let max = a[0];
+    let total = 0;
+    for (let i = 0 ; i < n ;i++){
+        total += a[i];
+        if( a[i] > max){
+            max = a[i];
+        }
+    }
+
+    document.write(`giá trị max = ${max} <br>`);
+    document.write(`trung bình của các phần tử : avg = ${total/n}`);
+</script>
+</body>
+</html>

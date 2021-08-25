@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let n = parseInt(prompt("nhập số phần tử"));
+    for(let i=0; i< n; i++){
+        a[i] = parseInt(prompt(`nhập giá trị phần tử a[${i}]`));
+    }
+
+    let first = 0 ;
+    let last = n -1;
+
+    while(first < last){
+        let temp =  a[first] ;
+        a[first] = a[last];
+        a[last] = temp;
+
+        first++;
+        last--;
+    }
+    console.log(a);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = Array(10);
+    for (let i = 0 ; i< a.length;i++){
+        a[i]= parseInt(prompt(`nhập giá trị cho phần tử a[${i}]`));
+    }
+
+    let max = a[0];
+    let index;
+    for (let i = 0; i< a.length;i++){
+        if(a[i] > max){
+            max = a[i];
+            index = i;
+        }
+    }
+
+    console.log(max , index);
+</script>
+</body>
+</html>

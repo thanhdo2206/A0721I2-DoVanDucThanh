@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = "-1-9-08-80";
+    // let a="thanh-110-098-8";
+    let count = 0;
+
+    for (let i = 0; i<a.length;i++){
+        if(a[i] === "-"){
+            let x = parseInt(a[i+1]);
+            if(!isNaN(x) && x !== 0) {
+                count++;
+            }
+        }
+    }
+
+    console.log(`số lượng số âm trong chuỗi là : ${count}`);
+</script>
+</body>
+</html>
