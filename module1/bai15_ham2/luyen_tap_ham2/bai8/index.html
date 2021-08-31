@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+        function reverse(array) {
+            let first = 0;
+            let last = array.length - 1;
+            while (first < last) {
+                let temp = array[first];
+                array[first] = array[last];
+                array[last] = temp;
+                first++;
+                last--;
+            }
+            console.log(array);
+        }
+
+
+
+        let array = [1, 2, 3, 4];
+        reverse(array);
+    </script>
+</body>
+
+</html>
