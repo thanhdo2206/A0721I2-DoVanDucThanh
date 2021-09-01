@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        let str = "redder";
-        function isPalindrome(str) {
-            let count = 0;
-           let first = 0;
-           let last = a.length - 1;
-           while (first < last) {
-               if(str[first] == str[last]){
-                   count++;
-               }
-               first++;
-               last--;
-           }
+        // let str = "reder";
+        // function isPalindrome(str) {
+        //     let count = 0;
+        //    let first = 0;
+        //    let last = a.length - 1;
+        //    while (first < last) {
+        //        if(str[first] == str[last]){
+        //            count++;
+        //        }
+        //        first++;
+        //        last--;
+        //    }
 
-           if(Math.floor(str.length/2) == count) return true;
-           else return false;
+        //    if(Math.floor(str.length/2) == count) return true;
+        //    else return false;
+
+        // }
+        // console.log(isPalindrome(str));
+
+        
+        function isPalindrome(str) {
+
+            let first = 0;
+            let last = str.length - 1;
+
+            if (first == last) return true;
+
+            if (str[first] === str[last]) {
+                let s = str.slice(first + 1, last);
+                return isPalindrome(s);
+            }
+            else return false;
 
         }
+
+        let chuoi = "thanh";
+        let str = chuoi.split('');
         console.log(isPalindrome(str));
     </script>
 </body>
+
 </html>
