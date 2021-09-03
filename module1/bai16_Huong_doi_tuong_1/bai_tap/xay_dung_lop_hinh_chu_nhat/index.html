@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <canvas id="myCanvas"></canvas>
     <script>
 
         function Rectangle(width, height) {
@@ -19,11 +20,32 @@
                 return this.width * this.height;
             }
 
-            this.getPerimeter  = function (){
-                return  (this.width + this.height)/2;
+            this.getPerimeter = function () {
+                return (this.width + this.height) / 2;
             }
 
+            this.createRectangle = function () {
+                let ctx = document.getElementById("myCanvas").getContext("2d");
+                ctx.fillRect(10, 10, this.width, this.height);
+            }
+
+            this.setRectangle = function (newWidth,newHeight) {
+                this.width = newWidth;
+                this.height = newHeight;
+            }
+
+            
         }
+
+        let hcn = new Rectangle(200, 100);
+        hcn.createRectangle();
+        hcn.setRectangle(300,400);
+        console.log("dien tich : " + hcn.getArea() + ", chu vi :" + hcn.getPerimeter());
+
+
+
+
+       
     </script>
 </body>
 
