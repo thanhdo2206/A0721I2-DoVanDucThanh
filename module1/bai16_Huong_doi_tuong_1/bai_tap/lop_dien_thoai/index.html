@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Mobile(pin, status, mobile) {
+            this.mobile = mobile;
+            this.pin = pin;
+            this.mesWriting = "";
+            this.mesInbox = "";
+            this.mesSent = "";
+            this.status = status;
+
+            this.checkStatus = function () {
+                let check = true;
+                return this.status === check;
+            }
+
+            this.turnOn_turnOff = function () {
+
+                if (this.pin == 0) this.refillBattery();
+                else this.pin--;
+                this.status = !this.status;
+
+            }
+
+            this.refillBattery = function () {
+                while (this.pin < 100) {
+                    this.pin++;
+                }
+            }
+
+            this.writeMes = function (mes) {
+
+                if (this.status) {
+                    if (this.pin == 0) this.refillBattery();
+                    else this.pin--;
+                    this.mesWriting = mes;
+                    console.log(this.mesWriting);
+                    console.log(this.pin);
+                }
+                else console.log(this.mobile + " điện thoại bạn chưa bật");
+
+            }
+
+            //nhận tin nhắn
+            this.setMes = function (mes) {
+                if (this.status) this.mesInbox = mes;
+                else console.log(this.mobile + " điện thoại bạn chưa bật");
+            }
+
+            //gửi tin nhắn
+            this.sendMes = function (objDifferent) {
+
+
+                if (this.status) {
+                    if (this.pin == 0) this.refillBattery();
+                    else this.pin--;
+                    this.mesSent = this.mesWriting;
+                    objDifferent.setMes(this.mesWriting);
+                } else console.log(this.mobile + " điện thoại bạn chưa bật");
+
+            }
+
+            //xem tin nhắn hộp thư đến
+            this.getMesInbox = function () {
+
+
+                if (this.status) {
+                    if (this.pin == 0) this.refillBattery();
+                    else this.pin--;
+                    console.log(this.mesInbox);
+                    console.log(this.pin);
+                }
+
+                else console.log(this.mobile + " điện thoại bạn chưa bật");
+            }
+
+            //xem tin đã gửi
+            this.getMesSent = function () {
+
+
+                if (this.status) {
+                    if (this.pin == 0) this.refillBattery();
+                    else this.pin--;
+                    console.log(this.pin);
+                    console.log(this.mesSent);
+                }
+                else console.log(this.mobile + " điện thoại bạn chưa bật");
+            }
+
+        }
+
+        let iphone = new Mobile(90, false, 'iphone');
+        let nokia = new Mobile(10, false, 'nokia');
+
+
+
+        iphone.turnOn_turnOff();
+        nokia.turnOn_turnOff();
+        iphone.writeMes("tôi là iphone");
+        iphone.sendMes(nokia);
+        nokia.getMesInbox();
+        iphone.getMesSent();
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
