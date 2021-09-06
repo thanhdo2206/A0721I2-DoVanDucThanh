@@ -37,14 +37,14 @@
                 }
             }
 
-            this.writeMes = function (mes) {
+            this.writeMes = function () {
 
                 if (this.status) {
                     if (this.pin == 0) this.refillBattery();
                     else this.pin--;
+                    let mes = prompt("soạn tin nhắn bạn muốn gửi");
                     this.mesWriting = mes;
-                    console.log(this.mesWriting);
-                    console.log(this.pin);
+
                 }
                 else console.log(this.mobile + " điện thoại bạn chưa bật");
 
@@ -52,7 +52,7 @@
 
             //nhận tin nhắn
             this.setMes = function (mes) {
-                if (this.status) this.mesInbox = mes;
+                if (this.status) this.mesInbox += mes + ", ";
                 else console.log(this.mobile + " điện thoại bạn chưa bật");
             }
 
@@ -63,7 +63,7 @@
                 if (this.status) {
                     if (this.pin == 0) this.refillBattery();
                     else this.pin--;
-                    this.mesSent = this.mesWriting;
+                    this.mesSent += this.mesWriting + ", ";
                     objDifferent.setMes(this.mesWriting);
                 } else console.log(this.mobile + " điện thoại bạn chưa bật");
 
@@ -90,8 +90,8 @@
                 if (this.status) {
                     if (this.pin == 0) this.refillBattery();
                     else this.pin--;
-                    console.log(this.pin);
                     console.log(this.mesSent);
+                    console.log(this.pin);
                 }
                 else console.log(this.mobile + " điện thoại bạn chưa bật");
             }
@@ -99,24 +99,15 @@
         }
 
         let iphone = new Mobile(90, false, 'iphone');
-        let nokia = new Mobile(10, false, 'nokia');
+        let nokia = new Mobile(2, false, 'nokia');
 
 
 
         iphone.turnOn_turnOff();
         nokia.turnOn_turnOff();
-        iphone.writeMes("tôi là iphone");
+        iphone.writeMes();
         iphone.sendMes(nokia);
         nokia.getMesInbox();
-        iphone.getMesSent();
-
-
-
-
-
-
-
-
     </script>
 </body>
 
