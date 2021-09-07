@@ -50,9 +50,6 @@ function start() {
       hero.moveRight();
 
     }
-    
-
-   
 
   }
   else if (hero.top < window.innerHeight - hero.size) hero.moveDown();

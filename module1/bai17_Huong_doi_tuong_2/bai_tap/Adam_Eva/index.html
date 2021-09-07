@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Apple {
+            constructor() {
+                this.weight = 10;
+            }
+
+        }
+
+        class Human {
+            constructor(name, sex, kilo, apple) {
+                this.name = name;
+                this.sex = sex;
+                this.kilo = kilo;
+                this.fruit = apple;//đôi tượng apple thuộc sở hữu của người đó
+            }
+
+            say(str) {
+                console.log(str);
+            }
+
+            eat() {
+                if (this.fruit.weight > 0) {
+                    this.kilo++;
+                    this.fruit.weight--;
+                    console.log("đang ăn táo")
+                } else console.log("ăn hết rồi");
+
+            }
+
+            checkWeightApple() {
+                console.log(`khối lượng còn lại của quả táo là : ${this.fruit.weight}`);
+
+            }
+
+
+        }
+
+        let apple = new Apple();
+        let adam = new Human('adam', 'man', 70, apple);
+        adam.say("tôi muốn ăn táo");
+        adam.eat();
+        checkWeightApple()
+    </script>
+</body>
+
+</html>
