@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let salary = prompt("nhập lương của bạn");
+        let tax;
+
+
+        if (salary < 7) {
+            tax = 5 * salary / 100;
+        } else if (salary < 15) {
+            tax = 10 * salary / 100;
+        } else tax = 20 * salary / 100;
+
+        let salaryReal = salary - tax;
+        console.log(`lương ròng của nhân viên là ${salaryReal}`);
+    </script>
+</body>
+
+</html>

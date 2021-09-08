@@ -36,15 +36,16 @@
                 console.log("meo meo");
             }
 
-            catchMouse(mickey) {
-                if (this.maxSpeed > mickey.speed) {
-                    mickey.status = true;
+            catchMouse(mouse) {
+                if (this.maxSpeed > mouse.speed) {
+                    console.log("Bắt được chuột rồi nhé");
+                    mouse.status = true;
                 }
             }
 
-            eatMouse(mickey) {
-                if (mickey.status) {
-                    this.weightCat += mickey.weightMouse;
+            eatMouse(mouse) {
+                if (mouse.status) {
+                    this.weightCat += mouse.weightMouse;
                     console.log(this.weightCat);
                 }
                 else console.log("không ăn chuột chết");

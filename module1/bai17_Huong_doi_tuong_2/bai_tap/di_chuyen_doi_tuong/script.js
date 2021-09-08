@@ -40,25 +40,32 @@ function Hero(image, top, left, speed) {
 
 let speedInput = parseInt(prompt("nhập tốc độ bạn muốn"));
 var hero = new Hero('lionel-messi-co-the-roi-barca-vao-nam-2021-4bf-5056926.jpg', 20, 30, speedInput);
-let leftCurrent = hero.left;
+
+//dịch phải left lúc sau lớn hơn left lúc đầu
+//dịch trái left lúc sau bé hơn left lúc đầu
+let leftCurrent = 0;
+// hero.moveRight();
+
 function start() {
 
-  if (hero.left < window.innerWidth - hero.size  ) {
+  if (hero.left < window.innerWidth - hero.size) {
 
-    if (leftCurrent <= hero.left) {
+    if (leftCurrent < hero.left) {
       leftCurrent = hero.left;
       hero.moveRight();
 
     }
 
-  }
-  else if (hero.top < window.innerHeight - hero.size) hero.moveDown();
-  else if(hero.left !== 0) {
-    hero.moveLeft();
-    leftCurrent = hero.left;
-   }
 
-  else if (hero.top !== 0) hero.moveUp();
+  } else if (hero.top < window.innerHeight - hero.size) hero.moveDown();
+  else if (hero.left !== 0) {
+    hero.moveLeft();
+    // leftCurrent = hero.left;
+  }
+  // else if (hero.top !== 0) hero.moveUp();
+
+
+  
 
   document.getElementById('game').innerHTML = hero.getHeroElement();
 

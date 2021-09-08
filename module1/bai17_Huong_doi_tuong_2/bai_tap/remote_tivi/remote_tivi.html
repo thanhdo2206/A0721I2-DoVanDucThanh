@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Remote {
+            constructor(tivi, id) {
+                this.id = id;
+                this.tivi = tivi;
+
+            }
+
+            passChanel() {
+                let chanel = prompt("bạn muốn chuyển sang kênh nào");
+                this.tivi.chanel = chanel;
+                alert(`Đã chuyển sang kênh ${this.tivi.chanel}`);
+            }
+
+            changeSoundByRemote() {
+                let input = prompt("bạn muốn 'tăng' hay 'giảm' âm lượng");
+                let volume = prompt(`bạn muốn ${input} bao nhiêu`)
+                if (volume == "tăng") this.tivi.sound += volume;
+                else this.tivi.sound -= volume;
+
+                alert(`âm lượng hiện tại là ${this.tivi.sound}`);
+
+            }
+
+            turnOffTivi() {
+                this.tivi.status = false;
+                alert('đã tắt Tivi');
+            }
+        }
+
+        class Tivi {
+            constructor(status, sound) {
+
+                this.sound = sound;
+                this.status = status;
+            }
+
+            controlChanel(chane) {
+                this.status = true;
+                alert("đã bật tivi");
+
+                let chanel = prompt("bạn muốn chuyển sang kênh nào");
+                this.chanel = chanel;
+                alert(`Đã chuyển sang kênh ${this.chanel}`);
+
+
+
+            }
+
+
+            changeSoundByTivi() {
+                let input = prompt("bạn muốn 'tăng' hay 'giảm' âm lượng");
+                let volume = prompt(`bạn muốn ${input} bao nhiêu`)
+                if (volume == "tăng") this.tivi.sound += volume;
+                else this.tivi.sound -= volume;
+
+                alert(`âm lượng hiện tại là ${this.tivi.sound}`);
+            }
+
+
+        }
+
+        let sony = new Tivi(false, 10);
+        let remote = new Remote(sony, 1);
+
+        sony.controlChanel();
+        alert(sony.status);
+        remote.passChanel();
+        remote.changeSoundByRemote();
+        console.log(sony.sound);
+        remote.turnOffTivi();
+
+
+
+    </script>
+</body>
+
+</html>
