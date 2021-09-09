@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Vẽ tam giác vuông cân rỗng có chiều cao h. Ví dụ: h = 5
+        let h =prompt("nhập chiều cao cho tam giác vuông cân");
+        for(let i=1;i<=h;i++){
+            for(let j =1;j<=h;j++){
+                if(i==5) document.writeln("*");
+                else if(j==1 || j == i) document.writeln("*");
+                else document.writeln("&nbsp;&nbsp");
+            }
+            document.writeln("<br>")
+        }
+    </script>
+</body>
+</html>
