@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //hàm chuẩn hóa một từ
+        const standardizeItem = (str) => {
+            let newStr = "";
+            for (let i = 0; i < str.length; i++) {
+                if (i == 0) newStr += str[i].toUpperCase();
+                else newStr += str[i].toLowerCase();
+            }
+            return newStr;
+        };
+
+        const standardize = (input) => {
+            let arrayStr = input.split(" ");
+            let result = "";
+            for (let i = 0; i < arrayStr.length; i++) {
+                if (arrayStr[i] !== "") {
+                    result += standardizeItem(arrayStr[i]) + " ";
+                }
+            }
+            return result;
+        };
+
+        // hàm tìm từ dài nhất trong 1 xấu kí tự bất kỳ
+        const maxLength = (string) => {
+            let arrayStr = string.split(" ");
+            let max = 0;
+            let wordMax;
+            for (let i = 0; i < arrayStr.length; i++) {
+                if (arrayStr[i] !== "" && arrayStr[i].length > max) {
+                    max = arrayStr[i].length;
+                    wordMax = arrayStr[i];
+                }
+            }
+            return wordMax;
+        }
+
+        function main() {
+            
+            let input = prompt("Nhập xâu kí tự bạn muốn chuẩn hóa");
+            console.log("Xâu trước khi chuẩn hóa :" + input);
+            let temp = standardize(input);
+            console.log("Xâu trước khi chuẩn hóa :" + temp);
+            console.log("Từ dài nhất trong xâu chuẩn hóa là : " + maxLength(temp));
+
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
-        // alert("Menu đồ uống của chúng tôi <br> 1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)");
+        let money = [1, 2, 3, 4, 5, 6];
+        let drink = ['cafe' ,'cam vắt','nước ép cà rốt','nước ép cà chua','nước lọc','nước dừa'];
+        let sum = 0;
+        let yourChoice;
 
+        do {
+
+            let input = prompt("Menu đồ uống của chúng tôi <br> 1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)");
+            yourChoice = parseInt(input);
+            if(yourChoice === 7) break;
+            let num = parseInt(prompt(`đơn giá của ${drink[yourChoice - 1]} là ${money[yourChoice -1]}. Vui lòng nhập số lượng bạn muốn`));
+            switch (yourChoice) {
+                case 1: sum += num * money[0]; break;
+                case 2: sum += num * money[1]; break;
+                case 3: sum += num * money[2]; break;
+                case 4: sum += num * money[3]; break;
+                case 5: sum += num * money[4]; break;
+                case 6: sum += num * money[5]; break;
+
+            }
+
+
+        } while (true);
+
+        alert("Tổng số tiền của bạn là : " + sum);
     </script>
 </body>
+
 </html>

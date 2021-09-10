@@ -10,24 +10,15 @@
 
 <body>
     <script>
-        let b = [8,10,1,8,3];
-        let a = [1, 2, 3, 8, 10];
-        let c=[];
-        let count = 0;
-        for (let i = 0; i < a.length; i++) {
-            for (let j = 0; j < a.length; j++) {
-                if(b[i] === a[j]){
-                    count++;
-                    break;
-                }
-            }
+       let a =[1,2,3];
+       let b = [];
+       b.push(a[0]);
+       for(let i=1; i< a.length;i++){
+           let c = b[i-1] + a[i];
+           b.push(c);
+       }
 
-            if(count ==0 ) c.push(b[i]);
-            
-            
-        }
-
-        console.log(c);
+       console.log(b);
     </script>
 </body>
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+        // 4 kí tự khác nhau a b c v
+        let a = 'cavabcaabcvbv';
+        let count = a.length;
+        for (let i = 0; i < a.length; i++) {
+            for (let j = i + 1; j < a.length; j++) {
+                if (a[i] == a[j]) {
+                    count--;
+                    break;
+                }
+            }
+        }
+
+        console.log("Số các kí tự khác nhau trong xâu là : " + count);
+    </script>
+</body>
+
+</html>
