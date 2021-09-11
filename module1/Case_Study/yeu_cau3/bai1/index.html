@@ -10,15 +10,19 @@
 
 <body>
     <script>
-       let a =[1,2,3];
-       let b = [];
-       b.push(a[0]);
-       for(let i=1; i< a.length;i++){
-           let c = b[i-1] + a[i];
-           b.push(c);
-       }
+        //Cho mảng a chỉ chứa các số nguyên
+        //Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+        //b[n - 1] = a[0] + a[1] + ... + a[n - 1]
 
-       console.log(b);
+        let a = [1, 2, 3, 6];
+        let b = [];
+        b.push(a[0]);
+        for (let i = 1; i < a.length; i++) {
+            let c = b[i - 1] + a[i];
+            b.push(c);
+        }
+
+        console.log("prefixSums(a) = [" + b + "]");
     </script>
 </body>
 

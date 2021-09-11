@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. 
+        //Với m, n là các số nhập từ bàn phím.
+        const input = (a) => {
+            let m = prompt("nhập số hàng");
+            let n = prompt("nhập số cột");
+            for (let i = 0; i < m; i++) {
+                a[i] = [];
+                for (let j = 0; j < n; j++) {
+                    a[i][j] = prompt("nhập phần tử a[" + i + "][" + j + "]");
+                }
+            }
+            //   console.log(a);
+        };
+
+        const sumEven = (a) => {
+            let sum = 0;
+            for (let i = 0; i < a.length; i++) {
+                for (let j = 0; j < a[0].length; j++) {
+                    if (a[i][j] % 2 == 0) sum += parseInt(a[i][j]);
+                }
+            }
+
+            alert(sum);
+        };
+
+        function main() {
+            let a = [];
+            input(a);
+            sumEven(a);
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

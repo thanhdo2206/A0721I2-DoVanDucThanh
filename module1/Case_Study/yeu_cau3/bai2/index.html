@@ -11,11 +11,15 @@
 <body>
     <script>
 
-
+        //Cho 2 mảng A và B chứa số nguyên. 
+        //Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B 
+        //nhưng lại không xuất hiện A
         let b = [8, 4, 7, 6, 6, 7, 7, 6, 6, 6];
         let a = [1, 2, 3, 8, 10];
         let c = [];
 
+        //thêm vào mảng c các phần tử xuất hiện trong mảng B 
+        //nhưng lại không xuất hiện A và chưa sắp xếp
         for (let i = 0; i < b.length; i++) {
             let count = 0;
             for (let j = 0; j < a.length; j++) {
@@ -36,6 +40,7 @@
                         c[j] = temp;
                     }
 
+                    //xóa những phần tử trùng
                     if (c[i] === c[j]) {
                         c.splice(j, 1);
                         //để ko bị mất phần tử phía sau(sau khi phần tử bị xóa)
