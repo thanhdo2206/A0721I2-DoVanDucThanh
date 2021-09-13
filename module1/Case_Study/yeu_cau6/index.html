@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Xổ Số</h1>
+    <input type="text" max="2">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <br><br>
+    <button id="buy">Mua vé</button>
+    <button id="result">Xem kết quả</button>
+
+
+    <script>
+        let numWin = "123456789016";
+        let num1 = 12;
+        let num2 = 34;
+        let num3 = 56;
+        let num4 = 78;
+        let num5 = 90;
+        let num6 = 16;
+        let inputNums = document.querySelectorAll("input");
+        let temp = "";
+
+        // for(let i =0 ;i < inputNums.length;i++){
+        inputNums.forEach((item, index) => {
+           item.addEventListener("keyup",()=>{
+               temp = item.value;
+                console.log(temp);
+           })
+           
+        })
+            
+           
+
+
+
+            // })
+
+
+
+    </script>
+</body>
+
+</html>

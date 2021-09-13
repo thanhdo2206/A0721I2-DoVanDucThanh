@@ -18,30 +18,24 @@
 
         ]
 
-        const max = () => {
+        const check = () => {
             let max = a[0][0];
-            for (let i = 0; i < a.length; i++) {
-                for (let j = 0; j < a[i].length; j++) {
-                    if (max < a[i][j]) max = a[i][j];
-                }
-            }
-
-            console.log("giá trị max là : " + max);
-        }
-
-        const min = () => {
             let min = a[0][0];
             for (let i = 0; i < a.length; i++) {
                 for (let j = 0; j < a[i].length; j++) {
+                    if (max < a[i][j]) max = a[i][j];
                     if (min > a[i][j]) min = a[i][j];
                 }
             }
 
+            console.log("giá trị max là : " + max);
             console.log("giá trị min là : " + min);
         }
 
-        max();
-        min();
+       
+
+        check();
+        
     </script>
 </body>
 
