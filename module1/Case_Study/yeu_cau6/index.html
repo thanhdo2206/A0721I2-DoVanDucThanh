@@ -9,14 +9,18 @@
 </head>
 
 <body>
-
+    <!-- onchange="a()" -->
     <h1>Xổ Số</h1>
-    <input type="text" max="2">
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <input type="text">
+    <div id="container">
+
+    </div>
+    <!-- <input type="text" maxlength="2">
+        <input type="text" maxlength="2">
+        <input type="text" maxlength="2">
+        <input type="text" maxlength="2">
+        <input type="text" maxlength="2">
+        <input type="text" maxlength="2"> -->
+
     <br><br>
     <button id="buy">Mua vé</button>
     <button id="result">Xem kết quả</button>
@@ -30,23 +34,49 @@
         let num4 = 78;
         let num5 = 90;
         let num6 = 16;
-        let inputNums = document.querySelectorAll("input");
+
+
+        let btn = document.getElementById("result");
+        let container = document.getElementById("container");
+        
+
+        function a() {
+            let str = "";
+            for (let i = 0; i < 6; i++) {
+                str += `<input type="text" maxlength="2" style= "margin-right : 4px" onchange="check(${i})">`;
+            }
+            container.innerHTML = str;
+        }
+        a();
+
         let temp = "";
+        function check(index) {
+            let inputNums = document.querySelectorAll("input");
+            // console.log(inputNums[0].value);
+            temp += inputNums[index].value;
+            // console.log(temp);
+            btn.addEventListener('click', () => {
+                if (temp == numWin) console.log("giải nhất");
+                else if (temp.slice(1) == numWin.slice(1)) console.log("giải nhì");
+                else if (temp.slice(5) == numWin.slice(5)) console.log("giải ba");
+                else console.log("chúc bạn may mắn lần sau");
+            })
+        }
 
-        // for(let i =0 ;i < inputNums.length;i++){
-        inputNums.forEach((item, index) => {
-           item.addEventListener("keyup",()=>{
-               temp = item.value;
-                console.log(temp);
-           })
-           
-        })
-            
-           
 
 
 
-            // })
+
+
+
+
+
+
+
+
+
+
+
 
 
 
