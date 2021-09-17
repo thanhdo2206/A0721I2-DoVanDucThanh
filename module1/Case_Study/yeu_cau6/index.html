@@ -9,59 +9,75 @@
 </head>
 
 <body>
-    <!-- onchange="a()" -->
+
     <h1>Xổ Số</h1>
     <div id="container">
 
     </div>
-    <!-- <input type="text" maxlength="2">
-        <input type="text" maxlength="2">
-        <input type="text" maxlength="2">
-        <input type="text" maxlength="2">
-        <input type="text" maxlength="2">
-        <input type="text" maxlength="2"> -->
 
     <br><br>
-    <button id="buy">Mua vé</button>
-    <button id="result">Xem kết quả</button>
+    <button id="buy" onclick="choose()">Mua vé</button>
+    <button id="result" onclick="result()">Xem kết quả</button>
 
 
     <script>
         let numWin = "123456789016";
-        let num1 = 12;
-        let num2 = 34;
-        let num3 = 56;
-        let num4 = 78;
-        let num5 = 90;
-        let num6 = 16;
-
 
         let btn = document.getElementById("result");
         let container = document.getElementById("container");
-        
+        let array = [];
+        let chose = "";
 
-        function a() {
+
+        function choose() {
+            chose = prompt(`
+            Bạn có 2 lựa chọn:
+            1.Bạn muốn tự chọn số
+            2.Hệ thống tự random`);
+            if (chose == 1) render();
+            else randomNumber();
+        }
+
+        function render() {
             let str = "";
             for (let i = 0; i < 6; i++) {
-                str += `<input type="text" maxlength="2" style= "margin-right : 4px" onchange="check(${i})">`;
+                str += `<input type="text" maxlength="2" style= "margin-right : 4px" onchange="getInput(${i})">`;
             }
             container.innerHTML = str;
         }
-        a();
 
-        let temp = "";
-        function check(index) {
+        function getInput(index) {
             let inputNums = document.querySelectorAll("input");
-            // console.log(inputNums[0].value);
-            temp += inputNums[index].value;
-            // console.log(temp);
-            btn.addEventListener('click', () => {
-                if (temp == numWin) console.log("giải nhất");
-                else if (temp.slice(1) == numWin.slice(1)) console.log("giải nhì");
-                else if (temp.slice(5) == numWin.slice(5)) console.log("giải ba");
-                else console.log("chúc bạn may mắn lần sau");
-            })
+            array[index] = inputNums[index].value;
+            console.log(array);
         }
+
+        function randomNumber() {
+            let str = "";
+            for (let i = 0; i < 6; i++) {
+                
+               let numRan = Math.floor(Math.random() *99);
+                array[i] = numRan;
+                // những số có 1 chữ số phải thêm số 0
+                if(numRan.toString().length == 1) numRan = "0" + numRan.toString();
+                str += `<input type="text" maxlength="2" style= "margin-right : 4px" value = "${numRan}">`;
+
+            }
+            container.innerHTML = str;
+        }
+
+        function result() {
+            let temp = array.join("");
+            
+            if (temp == numWin) console.log("giải nhất");
+            else if (temp.slice(2) == numWin.slice(2)) console.log("giải nhì");
+            else if (temp.slice(6) == numWin.slice(6)) console.log("giải ba");
+            else console.log("chúc bạn may mắn lần sau");
+
+
+        }
+
+
 
 
 
