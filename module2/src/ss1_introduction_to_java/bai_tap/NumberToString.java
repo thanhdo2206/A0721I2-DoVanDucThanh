@@ -8,7 +8,7 @@ public class NumberToString {
 		NumberToString thanh = new NumberToString();
 		Scanner sc = new Scanner(System.in);
 		System.out.print("nhập số nguyên cần đọc : ");
-		int num = sc.nextInt();		
+		int num = sc.nextInt();
 		String str = "";
 
 		if (num < 10) {
@@ -161,6 +161,7 @@ public class NumberToString {
 			String strOnes = "";
 			String strTens = "";
 			String strHundreds = "";
+			String strTensAndOnes = "";
 
 			switch (hundreds) {
 			case 1:
@@ -192,67 +193,105 @@ public class NumberToString {
 				break;
 			}
 
-			switch (tens) {
-			case 2:
-				strTens = "twenty ";
+			switch (tensAndOnes) {
+			case 10:
+				strTensAndOnes = "ten";
 				break;
-			case 3:
-				strTens = "thirdty ";
+			case 11:
+				strTensAndOnes = "eleven";
 				break;
-			case 4:
-				strTens = "fourty ";
+			case 12:
+				strTensAndOnes = "twelve";
 				break;
-			case 5:
-				strTens = "fifty ";
+			case 13:
+				strTensAndOnes = "thirteen";
 				break;
-			case 6:
-				strTens = "sixty ";
+			case 14:
+				strTensAndOnes = "fourteen";
 				break;
-			case 7:
-				strTens = "seventy ";
+			case 15:
+				strTensAndOnes = "fifteen";
 				break;
-			case 8:
-				strTens = "eighty ";
+			case 16:
+				strTensAndOnes = "sixteen";
 				break;
-			case 9:
-				strTens = "ninety ";
+			case 17:
+				strTensAndOnes = "seventeen";
 				break;
-			}
+			case 18:
+				strTensAndOnes = "eighteen";
+				break;
+			case 19:
+				strTensAndOnes = "nineteen";
+				break;
+			default:
+				switch (tens) {
 
-			switch (ones) {
-			case 0:
-				strOnes = "";
-				break;
-			case 1:
-				strOnes = "one";
-				break;
-			case 2:
-				strOnes = "two";
-				break;
-			case 3:
-				strOnes = "three";
-				break;
-			case 4:
-				strOnes = "four";
-				break;
-			case 5:
-				strOnes = "fine";
-				break;
-			case 6:
-				strOnes = "six";
-				break;
-			case 7:
-				strOnes = "seven";
-				break;
-			case 8:
-				strOnes = "eight";
-				break;
-			case 9:
-				strOnes = "nine";
-				break;
-			}
+				case 2:
+					strTens = "twenty ";
+					break;
+				case 3:
+					strTens = "thirdty ";
+					break;
+				case 4:
+					strTens = "fourty ";
+					break;
+				case 5:
+					strTens = "fifty ";
+					break;
+				case 6:
+					strTens = "sixty ";
+					break;
+				case 7:
+					strTens = "seventy ";
+					break;
+				case 8:
+					strTens = "eighty ";
+					break;
+				case 9:
+					strTens = "ninety ";
+					break;
+				}
 
-			str = strHundreds + "hundred" + " and " + strTens + strOnes;
+				switch (ones) {
+				case 0:
+					strOnes = "";
+					break;
+				case 1:
+					strOnes = "one";
+					break;
+				case 2:
+					strOnes = "two";
+					break;
+				case 3:
+					strOnes = "three";
+					break;
+				case 4:
+					strOnes = "four";
+					break;
+				case 5:
+					strOnes = "fine";
+					break;
+				case 6:
+					strOnes = "six";
+					break;
+				case 7:
+					strOnes = "seven";
+					break;
+				case 8:
+					strOnes = "eight";
+					break;
+				case 9:
+					strOnes = "nine";
+					break;
+				}
+				
+				strTensAndOnes = strTens + strOnes;
+
+			}
+			
+			
+			str = strHundreds + "hundred" + " and " + strTensAndOnes;
 
 		} else
 			str = "out of ability";
