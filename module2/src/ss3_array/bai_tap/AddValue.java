@@ -8,7 +8,7 @@ public class AddValue {
 		int[] array = new int[10];
 
 		for (int i = 0; i < array.length; i++) {
-			System.out.print("Nhập phần tử " + i + ": ");
+			System.out.print("Nhập phần tử (nhập 0 để dừng) " + i + ":  ");
 			array[i] = sc.nextInt();
 			if (array[i] == 0)
 				break;
