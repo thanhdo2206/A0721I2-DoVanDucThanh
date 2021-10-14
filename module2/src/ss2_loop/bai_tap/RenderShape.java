@@ -47,9 +47,10 @@ public class RenderShape {
 				int h = 5;
 				for (int i = 1; i <= h; i++) {
 					for (int j = 1; j < 2 * h; j++) {
-						if (h - i < j && j < h + i) System.out.print("*");
-						else System.out.print(" ");
-							
+						if (h - i < j && j < h + i)
+							System.out.print("*");
+						else
+							System.out.print(" ");
 
 					}
 					System.out.println("");

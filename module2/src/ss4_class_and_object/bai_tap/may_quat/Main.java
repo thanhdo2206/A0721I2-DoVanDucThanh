@@ -15,5 +15,4 @@ public class Main {
 		fan2.setOn(false);
 		System.out.println(fan2);
 	}
-	
 }

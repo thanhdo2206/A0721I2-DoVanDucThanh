@@ -4,32 +4,41 @@ import java.util.Scanner;
 
 public class DeleteValue {
 	public static void main(String[] args) {
-		int[] array = { 1, 2, 3, 4, 5 };
+
 		System.out.print("nhập số : ");
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
+		int[] array = { 1, 2, 3, 4, 5 };
 		boolean check = false;
+		int[] newArray = new int[array.length - 1];
+		int index =0 ;
+		
 		for (int i = 0; i < array.length; i++) {
 			if (num == array[i]) {
 				check = true;
 				System.out.println("Vị trí được tìm thấy trong mảng : " + i);
-				for(int j=i;j<array.length -1;j++) {
-					array[j] = array[j+1];
-				}
-				array[array.length-1] = 0;		
-				
+				index = i;
+				break;
+
 			}
 		}
 		
-		if(check) {
+		
+		for (int i = 0; i < newArray.length ; i++) {
+			if(i >= index) newArray[i] = array[i + 1];
+			else newArray[i] = array[i];
+		}
+		
+		
+
+		if (check) {
 			System.out.println("Mảng đã xóa");
-			for(int i =0 ; i< array.length;i++) {
-				System.out.print(array[i] + "\t");
+			for (int i = 0; i < newArray.length; i++) {
+				System.out.print(newArray[i] + "\t");
 			}
-			
-		}else System.out.println("Không tìm thấy trong mảng");
-		
-		
+
+		} else
+			System.out.println("Không tìm thấy trong mảng");
 
 	}
 }

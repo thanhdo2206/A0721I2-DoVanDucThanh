@@ -1,4 +1,5 @@
 package ss4_class_and_object.thuc_hanh;
+
 import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {

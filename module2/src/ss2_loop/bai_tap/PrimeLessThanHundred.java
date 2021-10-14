@@ -23,5 +23,4 @@ public class PrimeLessThanHundred {
 		System.out.println("Các số nguyên tố từ 2 -> 100 :" + result);
 
 	}
-
 }

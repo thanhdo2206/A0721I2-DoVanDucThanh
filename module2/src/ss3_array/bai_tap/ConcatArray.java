@@ -1,6 +1,6 @@
 package ss3_array.bai_tap;
 
-import java.lang.reflect.Array;
+
 import java.util.Scanner;
 
 public class ConcatArray {

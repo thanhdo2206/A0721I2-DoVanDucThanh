@@ -1,4 +1,5 @@
 package ss3_array.bai_tap;
+
 import java.util.Scanner;
 public class SumColumn {
 	public static void input(double[][] array, int row, int col) {

@@ -5,30 +5,40 @@ import java.util.Scanner;
 public class AddValue {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int[] array = new int[10];
+		System.out.print("Nhập kích thước mảng ");
+		int size = sc.nextInt();
+		int[] array = new int[size];
+		int[] newArr = new int[size+1];
+		
+		
 
-		for (int i = 0; i < array.length; i++) {
-			System.out.print("Nhập phần tử (nhập 0 để dừng) " + i + ":  ");
+		for (int i = 0; i < size ; i++) {
+			System.out.print("Nhập phần tử " + i + ":  ");
 			array[i] = sc.nextInt();
-			if (array[i] == 0)
-				break;
+
 		}
 
 		System.out.print("Nhập số cần chèn :");
 		int num = sc.nextInt();
 		System.out.print("Nhập vị trí cần chèn : ");
 		int index = sc.nextInt();
-		if (index <= 1 || index >= array.length - 1) {
+		
+		if (index <= 1 || index >= size) {
 			System.out.println("không chèn được phần tử vào mảng");
 		} else {
-			for (int i = array.length - 1; i > index; i--) {
-				array[i] = array[i - 1];
+			
+			for (int i = 0 ; i < newArr.length; i++) {
+				if( i > index) newArr[i] = array[i - 1];
+				else if(i == index) newArr[i] = num;
+				else newArr[i] = array[i];
+				
 			}
-			array[index] = num;
 
+			
+			
 			System.out.println("Mảng đã thêm");
-			for (int i = 0; i < array.length; i++) {
-				System.out.print(array[i] + "\t");
+			for (int i = 0; i < newArr.length ; i++) {
+				System.out.print(newArr[i] + "\t");
 			}
 		}
 

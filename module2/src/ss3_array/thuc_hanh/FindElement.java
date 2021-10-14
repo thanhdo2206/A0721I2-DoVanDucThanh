@@ -1,4 +1,5 @@
 package ss3_array.thuc_hanh;
+
 import java.util.Scanner;
 public class FindElement {
 	public static void main(String[] args) {

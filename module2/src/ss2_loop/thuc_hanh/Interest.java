@@ -1,4 +1,5 @@
 package ss2_loop.thuc_hanh;
+
 import java.util.Scanner;
 public class Interest {
 	public static void main(String[] args) {
