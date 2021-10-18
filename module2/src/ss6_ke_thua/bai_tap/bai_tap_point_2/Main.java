@@ -5,13 +5,12 @@ public class Main {
 		Point point = new Point(2, 4);
 		System.out.println(point);
 
-		MoveablePoint movPoint = new MoveablePoint(4, 5, 6, 7);
+		MoveablePoint movPoint = new MoveablePoint(4,3, 6, 7);
 		System.out.println(movPoint);
-		movPoint.setSpeed(9, 10);
-		System.out.print("mảng chứa hai speed:");
-		float[] arr = movPoint.getSpeed();
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
-		}
+		
+		 System.out.println(movPoint.move()); 
+
+		movPoint.move();
+		System.out.println(movPoint);
 	}
 }
