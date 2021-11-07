@@ -24,7 +24,7 @@ public class MyList<T> {
 		}
 		// Thêm phần tử element vào cuối danh sách (mảng)
 		elements[size] = element;
-		// Tăng độ dài của danh sách lên 1;
+		
 		size++;
 	}
 
@@ -38,12 +38,12 @@ public class MyList<T> {
 		int lengthCopy = (size - (index + 1)) + 1;
 		
 		System.arraycopy(elements, index, arrTemp, 0, lengthCopy);
-		//System.out.println( Arrays.toString(arrTemp));
+		
 		
 		elements[index] = element;
 		System.arraycopy(arrTemp, 0, elements, index + 1, lengthCopy);
-		//System.out.println(Arrays.toString(elements));
-		// Tăng độ dài của danh sách lên 1;
+		
+		
 		size++;
 	}
 	
