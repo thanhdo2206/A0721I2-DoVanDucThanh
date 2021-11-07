@@ -1,4 +1,4 @@
-package ss15_xu_li_ngoai_le.thuc_hanh.lop_IllegalTriangleException;
+package ss15_xu_li_ngoai_le.bai_tap.lop_IllegalTriangleException;
 
 import java.util.Scanner;
 
